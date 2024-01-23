@@ -3,6 +3,7 @@
 #define MISSILE_LAUNCHER_HPP
 
 #include "ThreatObject.hpp"
+#include "Missile.hpp"
 #include <vector>
 
 class MissileLauncher {

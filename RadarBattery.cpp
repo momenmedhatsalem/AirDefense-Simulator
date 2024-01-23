@@ -4,7 +4,7 @@
 RadarBattery::RadarBattery(double x, double y, double z, double coverageRadius)
     : x_(x), y_(y), z_(z), coverageRadius_(coverageRadius) {}
 
-void RadarBattery::detectThreats(const std::vector<ThreatObject>& allThreats) {
+void RadarBattery::detectThreats(const std::vector<ThreatObject>& allThreats) const {
     // Clear previous detected threats
     detectedThreats_.clear();
 
