@@ -1,5 +1,11 @@
 // main.cpp
 #include "simulation.cpp"
+#include "Missile.cpp"
+#include "Space.cpp"
+#include "MissileLauncher.cpp"
+#include "RadarBattery.cpp"
+#include "ThreatObject.cpp"
+#include "RadarSystem.cpp"
 #include <iostream>
 
 int main() {

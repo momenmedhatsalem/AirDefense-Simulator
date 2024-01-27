@@ -1,19 +1,24 @@
-// CommandAndControlCenter.hpp
+// ControlAndCommandCenter.hpp
 #ifndef COMMAND_AND_CONTROL_CENTER_HPP
 #define COMMAND_AND_CONTROL_CENTER_HPP
 
-#include "RadarSystem.hpp"
 #include "MissileLauncher.hpp"
+#include "RadarSystem.hpp"
+#include "Space.hpp"
 
-class CommandAndControlCenter {
+class ControlAndCommandCenter {
 public:
-    CommandAndControlCenter(RadarSystem& radar, MissileLauncher& launcher);
-    void processThreats();
-    // Add other methods and member variables as needed
+    ControlAndCommandCenter();
+
+    void addMissileLauncher(const MissileLauncher& missileLauncher);
+    void addRadarSystem(const RadarSystem& radarSystem);
+
+    void simulateAirDefense();
 
 private:
-    RadarSystem& radarSystem_;
-    MissileLauncher& missileLauncher_;
+    std::vector<MissileLauncher> missileLaunchers_;
+    std::vector<RadarSystem> radarSystems_;
+    Space space_;
 };
 
-#endif // COMMAND_AND_CONTROL_CENTER_HPP
+#endif // CONTROL_AND_COMMAND_CENTER_HPP
