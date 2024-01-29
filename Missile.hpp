@@ -6,7 +6,7 @@
 
 class Missile {
 public:
-    Missile(double x, double y, double z, double speed, double direction, double width, double height, double length);
+    Missile(double x, double y, double z, double speed, double vertical_angle, double horizontal_angle, double width, double height, double length);
 
     void updatePosition();
 
@@ -31,15 +31,19 @@ private:
     double y_;
     double z_;
     double speed_;
-    double direction_; // Angle in radians
+    double vi_y;
+    double vi_x;
+    double vertical_angle_; // Angle in radians
+    double horizontal_angle_; // Angle in radians
     double width_;
     double height_;
     double length_;
     double distanceTraveled_;
-    bool hasHitTarget_;
-    bool hasHitGround_;
+    bool hasHitTarget_ = false;
+    bool hasHitGround_ = false;
     double targetX_; // Target coordinates
     double targetY_;
+    double current_speed_;
     double timeTraveled_;
 };
 

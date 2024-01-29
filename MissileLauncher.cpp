@@ -1,12 +1,12 @@
 #include "MissileLauncher.hpp"
 #include <algorithm>
 
-MissileLauncher::MissileLauncher(double x, double y, double z, double orientation)
-    : x_(x), y_(y), z_(z), orientation_(orientation) {}
+MissileLauncher::MissileLauncher(double x, double y, double z, double verical_orientation, double horizontal_orientation)
+    : x_(x), y_(y), z_(z), vertical_orientation_(verical_orientation), horizontal_orientation_(horizontal_orientation) {}
 
-void MissileLauncher::launchMissile(double speed, double direction, double width, double height, double length) {
+void MissileLauncher::launchMissile(double speed, double verical_orientation, double horizontal_orientation, double width, double height, double length) {
     // Create a new missile and add it to the missiles vector
-    missiles_.emplace_back(x_, y_, z_, speed, direction + orientation_, width, height, length);
+    missiles_.emplace_back(x_, y_, z_, speed, vertical_orientation_, horizontal_orientation, width, height, length);
 }
 
 void MissileLauncher::updateMissiles() {
@@ -40,7 +40,7 @@ double MissileLauncher::getZ() const {
 }
 
 double MissileLauncher::getOrientation() const {
-    return orientation_;
+    return vertical_orientation_;
 }
 
 const std::vector<Missile>& MissileLauncher::getMissiles() const {
